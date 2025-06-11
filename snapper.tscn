@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfhy86eamnjn"]
+
+[ext_resource type="Script" uid="uid://peeaxxi38og6" path="res://snapper.gd" id="1_6mgnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33qvl"]
+size = Vector2(160.5, 146.5)
+
+[node name="Snapper" type="Area2D"]
+script = ExtResource("1_6mgnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_33qvl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

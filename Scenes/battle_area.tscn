@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwi4xbforl6il"]
+[gd_scene load_steps=7 format=3 uid="uid://bwi4xbforl6il"]
 
 [ext_resource type="Script" uid="uid://v5xu3yqqu4xq" path="res://Scenes/battle_area.gd" id="1_fehfv"]
 [ext_resource type="PackedScene" uid="uid://kucktrbvho64" path="res://Player/player.tscn" id="1_rpt1q"]
 [ext_resource type="PackedScene" uid="uid://cp0iu0vue33cm" path="res://Menus/player_combat_menu.tscn" id="3_84oke"]
 [ext_resource type="PackedScene" uid="uid://bar2c1jqewuyr" path="res://Cards/test_card.tscn" id="4_84oke"]
+[ext_resource type="PackedScene" uid="uid://kfhy86eamnjn" path="res://snapper.tscn" id="5_3axf1"]
 
 [sub_resource type="GDScript" id="GDScript_84oke"]
 script/source = "extends Node2D
@@ -37,4 +38,9 @@ offset_right = 504.0
 offset_bottom = 24.0
 
 [node name="test card" parent="." instance=ExtResource("4_84oke")]
-position = Vector2(422, 500)
+position = Vector2(297, 287)
+
+[node name="Snapper" parent="." instance=ExtResource("5_3axf1")]
+position = Vector2(381, 325)
+
+[connection signal="area_entered" from="Snapper" to="." method="_on_snapper_area_entered"]
