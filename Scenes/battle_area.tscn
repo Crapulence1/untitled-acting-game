@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwi4xbforl6il"]
+
+[ext_resource type="Script" uid="uid://v5xu3yqqu4xq" path="res://Scenes/battle_area.gd" id="1_fehfv"]
+[ext_resource type="PackedScene" uid="uid://kucktrbvho64" path="res://Player/player.tscn" id="1_rpt1q"]
+[ext_resource type="PackedScene" uid="uid://cp0iu0vue33cm" path="res://Menus/player_combat_menu.tscn" id="3_84oke"]
+[ext_resource type="PackedScene" uid="uid://bar2c1jqewuyr" path="res://Cards/test_card.tscn" id="4_84oke"]
+
+[sub_resource type="GDScript" id="GDScript_84oke"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed(\"activate_object\"):
+		var menu = get_node
+"
+
+[node name="Battle area" type="Node2D"]
+script = ExtResource("1_fehfv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 320)
+
+[node name="Player" parent="." instance=ExtResource("1_rpt1q")]
+position = Vector2(579, 324)
+script = SubResource("GDScript_84oke")
+
+[node name="Player Combat Menu" parent="." instance=ExtResource("3_84oke")]
+offset_left = 504.0
+offset_top = 24.0
+offset_right = 504.0
+offset_bottom = 24.0
+
+[node name="test card" parent="." instance=ExtResource("4_84oke")]
+position = Vector2(422, 500)

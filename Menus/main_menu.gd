@@ -1,11 +1,7 @@
 extends Node2D
 
-
-
-
-
 func _on_play_pressed() -> void:
-	var new_scene = load("res://Menus/test.tscn")
+	var new_scene = load("res://Scenes/battle_area.tscn")
 	get_tree().change_scene_to_packed(new_scene)
 
 
