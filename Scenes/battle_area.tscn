@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://kucktrbvho64" path="res://Player/player.tscn" id="1_rpt1q"]
 [ext_resource type="PackedScene" uid="uid://cp0iu0vue33cm" path="res://Menus/player_combat_menu.tscn" id="3_84oke"]
 [ext_resource type="PackedScene" uid="uid://bar2c1jqewuyr" path="res://Cards/test_card.tscn" id="4_84oke"]
-[ext_resource type="PackedScene" uid="uid://kfhy86eamnjn" path="res://snapper.tscn" id="5_3axf1"]
+[ext_resource type="PackedScene" uid="uid://kfhy86eamnjn" path="res://Cards/snapper.tscn" id="5_3axf1"]
 
 [sub_resource type="GDScript" id="GDScript_84oke"]
 script/source = "extends Node2D

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://kfhy86eamnjn"]
 
-[ext_resource type="Script" uid="uid://peeaxxi38og6" path="res://snapper.gd" id="1_6mgnd"]
+[ext_resource type="Script" uid="uid://peeaxxi38og6" path="res://Cards/snapper.gd" id="1_6mgnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33qvl"]
 size = Vector2(160.5, 146.5)
