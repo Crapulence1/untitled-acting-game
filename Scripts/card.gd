@@ -10,7 +10,7 @@ extends Node2D
 @onready var CostLabel: = $CardCost/CostLabel
 
 func _ready():
-	loadValues()
+	setCardValues(CardCost, CardName, CardDesc)
 
 func setCardValues(cost: int, name:String, desc:String):
 	CardName = name
@@ -19,6 +19,6 @@ func setCardValues(cost: int, name:String, desc:String):
 	loadValues()
 	
 func loadValues():
+	CostLabel.set_text(str(CardCost))
 	NameLabel.set_text(CardName)
 	DescLabel.set_text(CardDesc)
-	CostLabel.set_text(str(CardCost))

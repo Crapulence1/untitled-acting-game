@@ -1,5 +1,4 @@
 extends Node2D
-var Deck = ["First", 2, 3, "Last"]
 
 @onready var Card: PackedScene = preload("res://Scenes/Card.tscn") #preloads card 
 @onready var spawn = $CanvasLayer/Spawn #defines card spawn point
@@ -11,9 +10,7 @@ func _process(_delta: float) -> void:
 	if get_node("Snapper").overlapping:
 		get_node("test card").global_position = get_node("Snapper").global_position #snaps into position
 
-
-func _on_debug_draw_pressed() -> void:
+func _on_debug_create_card_pressed() -> void:
 	var cardObj = Card.instantiate()
+	cardObj.setCardValues(1,"racist","hes racist...")
 	spawn.add_child(cardObj)
-	cardObj.setCardValues()
-	pass # Replace with function body.

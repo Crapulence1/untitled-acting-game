@@ -73,12 +73,5 @@ offset_bottom = 141.0
 text = "Create Card
 "
 
-[node name="DebugDrawCard" type="Button" parent="."]
-offset_left = 101.0
-offset_top = 154.0
-offset_right = 275.0
-offset_bottom = 207.0
-text = "Draw Card
-"
-
 [connection signal="area_entered" from="Snapper" to="." method="_on_snapper_area_entered"]
+[connection signal="pressed" from="DebugCreateCard" to="." method="_on_debug_create_card_pressed"]
