@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj8x1tfi52w5w"]
+
+[ext_resource type="Script" uid="uid://daern14oflhiv" path="res://Scripts/card.gd" id="1_h8wm0"]
+[ext_resource type="Texture2D" uid="uid://c41rrp7orr406" path="res://Assets/Simple pixel.png" id="2_3m7nw"]
+[ext_resource type="Texture2D" uid="uid://c7qym602bpw17" path="res://Assets/KITRRender.webp" id="3_kphy1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wejov"]
+font_size = 120
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6tr3"]
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_1geux"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_h8wm0")
+
+[node name="BaseCard" type="Sprite2D" parent="."]
+texture = ExtResource("2_3m7nw")
+
+[node name="CardName" type="Node2D" parent="."]
+
+[node name="NameLabel" type="Label" parent="CardName"]
+offset_left = -163.0
+offset_top = -464.0
+offset_right = 295.0
+offset_bottom = -250.0
+text = "Test"
+label_settings = SubResource("LabelSettings_wejov")
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="CardCost" type="Node2D" parent="."]
+
+[node name="CostLabel" type="Label" parent="CardCost"]
+offset_left = -291.0
+offset_top = -443.0
+offset_right = -208.0
+offset_bottom = -110.0
+text = "1
+"
+label_settings = SubResource("LabelSettings_c6tr3")
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="DescLabel" type="Label" parent="."]
+offset_left = -298.0
+offset_top = 41.0
+offset_right = 295.0
+offset_bottom = 178.0
+text = "Something Test"
+label_settings = SubResource("LabelSettings_1geux")
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="CardImage" type="Sprite2D" parent="."]
+position = Vector2(0, -103)
+texture = ExtResource("3_kphy1")

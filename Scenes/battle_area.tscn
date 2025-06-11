@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwi4xbforl6il"]
+[gd_scene load_steps=9 format=3 uid="uid://bwi4xbforl6il"]
 
-[ext_resource type="Script" uid="uid://v5xu3yqqu4xq" path="res://Scenes/battle_area.gd" id="1_fehfv"]
+[ext_resource type="Script" uid="uid://v5xu3yqqu4xq" path="res://Scripts/battle_area.gd" id="1_fehfv"]
 [ext_resource type="PackedScene" uid="uid://kucktrbvho64" path="res://Player/player.tscn" id="1_rpt1q"]
 [ext_resource type="PackedScene" uid="uid://cp0iu0vue33cm" path="res://Menus/player_combat_menu.tscn" id="3_84oke"]
-[ext_resource type="PackedScene" uid="uid://bar2c1jqewuyr" path="res://Cards/test_card.tscn" id="4_84oke"]
-[ext_resource type="PackedScene" uid="uid://kfhy86eamnjn" path="res://Cards/snapper.tscn" id="5_3axf1"]
+[ext_resource type="PackedScene" uid="uid://bar2c1jqewuyr" path="res://Scenes/test_card.tscn" id="4_84oke"]
+[ext_resource type="PackedScene" uid="uid://kfhy86eamnjn" path="res://Scenes/snapper.tscn" id="5_3axf1"]
+[ext_resource type="PackedScene" uid="uid://bj8x1tfi52w5w" path="res://Scenes/Card.tscn" id="6_pq0is"]
 
 [sub_resource type="GDScript" id="GDScript_84oke"]
 script/source = "extends Node2D
@@ -21,26 +22,63 @@ func _process(_delta: float) -> void:
 		var menu = get_node
 "
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3axf1"]
+load_path = "res://.godot/imported/Simple pixel.png-3fc02d009b75102c612eb08ff3ba4e18.ctex"
+
 [node name="Battle area" type="Node2D"]
 script = ExtResource("1_fehfv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(577, 320)
 
 [node name="Player" parent="." instance=ExtResource("1_rpt1q")]
-position = Vector2(579, 324)
+visible = false
+position = Vector2(571, 312)
 script = SubResource("GDScript_84oke")
 
 [node name="Player Combat Menu" parent="." instance=ExtResource("3_84oke")]
+visible = false
 offset_left = 504.0
 offset_top = 24.0
 offset_right = 504.0
 offset_bottom = 24.0
 
 [node name="test card" parent="." instance=ExtResource("4_84oke")]
-position = Vector2(297, 287)
+visible = false
+position = Vector2(381, 326)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CompressedTexture2D_3axf1")
 
 [node name="Snapper" parent="." instance=ExtResource("5_3axf1")]
+visible = false
 position = Vector2(381, 325)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Card" parent="CanvasLayer" instance=ExtResource("6_pq0is")]
+position = Vector2(447, 232)
+scale = Vector2(0.15, 0.15)
+CardName = "Racist"
+CardCost = 1000
+CardDesc = "Hes racist..."
+
+[node name="Spawn" type="Node2D" parent="CanvasLayer"]
+
+[node name="DebugCreateCard" type="Button" parent="."]
+offset_left = 101.0
+offset_top = 88.0
+offset_right = 275.0
+offset_bottom = 141.0
+text = "Create Card
+"
+
+[node name="DebugDrawCard" type="Button" parent="."]
+offset_left = 101.0
+offset_top = 154.0
+offset_right = 275.0
+offset_bottom = 207.0
+text = "Draw Card
+"
 
 [connection signal="area_entered" from="Snapper" to="." method="_on_snapper_area_entered"]
