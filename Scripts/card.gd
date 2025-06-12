@@ -20,5 +20,5 @@ func setCardValues(cost: int, name:String, desc:String):
 	
 func loadValues():
 	CostLabel.set_text(str(CardCost))
-	NameLabel.set_text(CardName)
+	NameLabel.set_text(CardName)#cock
 	DescLabel.set_text(CardDesc)
