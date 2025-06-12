@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var Card: PackedScene = preload("res://Scenes/Card.tscn") #preloads card 
 @onready var spawn = $CanvasLayer/Spawn #defines card spawn point
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("activate_object"): #checks if spacebar is pressed from input mapping
