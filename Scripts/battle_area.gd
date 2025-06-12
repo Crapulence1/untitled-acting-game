@@ -10,7 +10,8 @@ func _process(_delta: float) -> void:
 	if get_node("Snapper").overlapping:
 		get_node("test card").global_position = get_node("Snapper").global_position #snaps into position
 
-func _on_debug_create_card_pressed() -> void:
+func _on_debug_create_card_pressed():
 	var cardObj = Card.instantiate()
-	cardObj.setCardValues(1,"racist","hes racist...")
 	spawn.add_child(cardObj)
+	cardObj.setCardValues(1,"racist","hes racist...")
+	cardObj.visible = true

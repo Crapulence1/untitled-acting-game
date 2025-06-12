@@ -64,6 +64,7 @@ CardCost = 1000
 CardDesc = "Hes racist..."
 
 [node name="Spawn" type="Node2D" parent="CanvasLayer"]
+position = Vector2(324, 349)
 
 [node name="DebugCreateCard" type="Button" parent="."]
 offset_left = 101.0

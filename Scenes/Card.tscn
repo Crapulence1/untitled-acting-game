@@ -16,6 +16,7 @@ font_size = 80
 font_color = Color(0, 0, 0, 1)
 
 [node name="Card" type="Node2D"]
+scale = Vector2(0.15, 0.15)
 script = ExtResource("1_h8wm0")
 
 [node name="BaseCard" type="Sprite2D" parent="."]
@@ -32,6 +33,7 @@ text = "Test"
 label_settings = SubResource("LabelSettings_wejov")
 clip_text = true
 text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="CardCost" type="Node2D" parent="."]
 
@@ -45,6 +47,7 @@ text = "1
 label_settings = SubResource("LabelSettings_c6tr3")
 clip_text = true
 text_overrun_behavior = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="DescLabel" type="Label" parent="."]
 offset_left = -298.0
@@ -55,6 +58,7 @@ text = "Something Test"
 label_settings = SubResource("LabelSettings_1geux")
 clip_text = true
 text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="CardImage" type="Sprite2D" parent="."]
 position = Vector2(0, -103)
