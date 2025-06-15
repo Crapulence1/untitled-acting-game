@@ -11,6 +11,7 @@ extends Node2D
 
 func _ready():
 	setCardValues(CardCost, CardName, CardDesc)
+	add_to_group("Cards")
 
 func setCardValues(cost: int, name:String, desc:String):
 	CardName = name

@@ -51,19 +51,14 @@ scale = Vector2(0.15, 0.15)
 texture = SubResource("CompressedTexture2D_3axf1")
 
 [node name="Snapper" parent="." instance=ExtResource("5_3axf1")]
-visible = false
-position = Vector2(381, 325)
+position = Vector2(307, 417)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Card" parent="CanvasLayer" instance=ExtResource("6_pq0is")]
+[node name="Card" parent="." instance=ExtResource("6_pq0is")]
 position = Vector2(447, 232)
 scale = Vector2(0.15, 0.15)
 CardName = "Racist"
 CardCost = 1000
 CardDesc = "Hes racist..."
-
-[node name="Spawn" type="Node2D" parent="CanvasLayer"]
 
 [node name="DebugCreateCard" type="Button" parent="."]
 offset_left = 101.0
@@ -72,6 +67,8 @@ offset_right = 275.0
 offset_bottom = 141.0
 text = "Create Card
 "
+
+[node name="Spawn" type="Node2D" parent="."]
 
 [connection signal="area_entered" from="Snapper" to="." method="_on_snapper_area_entered"]
 [connection signal="pressed" from="DebugCreateCard" to="." method="_on_debug_create_card_pressed"]

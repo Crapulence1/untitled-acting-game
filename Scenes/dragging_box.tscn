@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvkg65e57dqru"]
+
+[ext_resource type="Script" uid="uid://cj8grwr5nedxi" path="res://Scripts/dragging_box.gd" id="1_qlkf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8wm0"]
+size = Vector2(775, 1063)
+
+[node name="Dragging_box" type="Area2D"]
+script = ExtResource("1_qlkf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1.5)
+shape = SubResource("RectangleShape2D_h8wm0")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
